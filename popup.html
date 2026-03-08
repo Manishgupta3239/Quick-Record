@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Screen Recorder</title>
+    <style>
+      body {
+        min-width: 300px;
+        min-height: 220px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #1a1a2e;
+        color: white;
+        margin: 0;
+        padding: 24px;
+        box-sizing: border-box;
+      }
+      h1 {
+        font-size: 18px;
+        margin: 0 0 16px 0;
+        color: #e0e0e0;
+        font-weight: 600;
+      }
+      #timer {
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 12px;
+        font-variant-numeric: tabular-nums;
+        color: #e94560;
+        letter-spacing: 2px;
+      }
+      #status {
+        font-size: 13px;
+        margin-bottom: 16px;
+        color: #8892b0;
+        min-height: 20px;
+      }
+      button {
+        padding: 12px 28px;
+        font-size: 15px;
+        font-weight: 600;
+        color: white;
+        background: linear-gradient(135deg, #e94560, #c23152);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
+      }
+      button:hover:not(:disabled) {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 20px rgba(233, 69, 96, 0.4);
+      }
+      button:active:not(:disabled) {
+        transform: translateY(0);
+      }
+      button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+      button.recording {
+        background: linear-gradient(135deg, #0f3460, #16213e);
+        box-shadow: 0 4px 15px rgba(15, 52, 96, 0.4);
+      }
+      button.recording:hover:not(:disabled) {
+        box-shadow: 0 6px 20px rgba(15, 52, 96, 0.5);
+      }
+      .option-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 16px;
+        font-size: 13px;
+        color: #8892b0;
+      }
+      .option-row input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        accent-color: #e94560;
+      }
+      .option-row label {
+        cursor: pointer;
+        user-select: none;
+      }
+      .logo {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+        margin-bottom: 12px;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <img class="logo" src="logo.png" alt="Quick Record">
+    <h1>Quick Record</h1>
+    <div id="timer">00:00:00</div>
+    <div id="status"></div>
+    <div class="option-row" id="micOption">
+      <input type="checkbox" id="includeMic">
+      <label for="includeMic">Include my microphone (voice)</label>
+    </div>
+    <button id="recordBtn">Start Recording</button>
+    <script src="popup.js"></script>
+  </body>
+</html>

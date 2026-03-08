@@ -1,0 +1,38 @@
+{
+    "manifest_version": 3,
+    "name": "Quick Record",
+    "version": "1.0",
+    "description": "Record your screen with audio directly from Chrome.",
+    "permissions": [
+        "offscreen",
+        "storage",
+        "downloads",
+        "tabs"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "Screen Recorder",
+        "default_icon": {
+            "16": "logo.png",
+            "48": "logo.png",
+            "128": "logo.png"
+        }
+    },
+    "icons": {
+        "16": "logo.png",
+        "48": "logo.png",
+        "128": "logo.png"
+    },
+    "commands": {
+        "start-stop-recording": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+R",
+                "mac": "Command+Shift+R"
+            },
+            "description": "Start or stop screen recording"
+        }
+    }
+}
