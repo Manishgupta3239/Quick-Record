@@ -83,10 +83,4 @@ video recorder/
 
 ---
 
-## 📄 License
-
-MIT (or your preferred license). Use and modify as you like.
-
----
-
 **Quick Record** — record in seconds, not minutes.
